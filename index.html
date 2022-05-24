@@ -1,0 +1,173 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="André Minoro Fusioka, software developer, machine learning enthusiast, pursuing a Ph.D. degree at the Federal University of Technology – Paraná (UTFPR)">
+    <meta name="keywords" content="Personal homepage, developer, student">
+    <meta name="author" content="André Minoro Fusioka">
+    <title>André Minoro Fusioka</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> 
+
+    <style>
+        :root {
+            --bg-color: #f5f5f5;
+            --white: #f5f5f5;
+            --color-1: #00F5D4;
+            --color-2: #009bf5;
+            --color-3: #025878;
+            --color-4: #F15BB5;
+            --color-5: #9B5DE5;
+
+        }
+
+        *, *::after, *::before {
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: 'Lato', sans-serif;
+            font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+        }
+
+        body 
+        {
+            font-size: 2.1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        #presentation {
+            /* height: 100vh; */
+            /* background-color: var(--bg-color); */
+            text-align: center;
+            padding-top: 2rem;
+            background: var(--color-3);
+            background: linear-gradient(90deg, var(--color-3) 0%, var(--color-2) 100%);
+            color: var(--white);
+        }
+
+        .container {
+            padding: 1rem;
+            max-width: 130rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .name {
+            font-size: 3.4rem;
+        }
+
+        .profile-image {
+            max-width: 100%;
+            width: 20rem;
+            border-radius: 50%;
+        }
+
+        .me {
+            max-width: 80rem;
+            text-align: left;
+            padding-top: 2rem;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 2rem;
+            /* max-width: 80%;
+            margin: 0 auto; */
+        }
+        
+        #repositories {
+            padding-top: 4rem;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .repository {
+            border: 1px solid #ccc;
+            padding: 2rem;
+            border-radius: 0.4rem;
+            box-shadow: 4px 4px 5px #999;
+            flex: 1 1 40rem;
+            min-height: 16rem;
+            /* max-width: 40rem; */
+        }
+        .repository .repository__name {
+            font-size: 2.4rem;
+        }
+        .repository p {
+            font-size: 1.8rem;
+        }
+
+        @media only screen and (min-width: 900px) {
+            #presentation {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+                
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<main>
+
+    <section id="presentation">
+        <div class="container">
+            <div class="photo">
+                <img class="profile-image" src="https://avatars.githubusercontent.com/u/4656113?v=4" alt="André Minoro Fusioka">
+            </div>
+            <div class="me">
+                <h1 class="name">André Minoro Fusioka</h1>
+                <p>Hello there!</p>
+                <p>{{ site.description }}.</p>
+            </div>
+        </div>
+    </section>
+    <section id="repositories">   
+        <h2 class="title">Projects</h2>
+        
+        <div class="flex container">
+            <article class="repository">
+                <h3 class="repository__name">Profile</h3>
+                <p class="repository__description">My profile on GitHub</p>
+                <a href="https://github.com/Minoro/">Visit</a>
+            </article>
+    
+            <article class="repository">
+                <h3 class="repository__name">PGPYML</h3>
+                <p class="repository__description">Machine Learning on PostgreSQL</p>
+                <a href="https://minoro.github.io/pgpyml/">Visit</a>
+            </article>
+            
+            <article class="repository">
+                <h3 class="repository__name">Active Fire Detection</h3>
+                <p class="repository__description"><abbr title="Active Fire Decetion">AFD</abbr> in Landsat-8 using Deep Learning</p>
+                <a href="https://github.com/pereira-gha/activefire">Visit</a>
+            </article>
+        </div>
+    </section>
+</main>
+    
+</body>
+</html>
