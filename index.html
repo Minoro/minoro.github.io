@@ -19,13 +19,12 @@
     <style>
         :root {
             --bg-color: #f5f5f5;
-            --white: #f5f5f5;
+            --white: #fff;
             --color-1: #00F5D4;
             --color-2: #009bf5;
             --color-3: #025878;
             --color-4: #F15BB5;
             --color-5: #9B5DE5;
-
         }
 
         *, *::after, *::before {
@@ -48,9 +47,14 @@
             margin-bottom: 1rem;
         }
 
+
+        section:nth-child(2n+1)
+        {
+            background-color: var(--bg-color);
+        }
+
+
         #presentation {
-            /* height: 100vh; */
-            /* background-color: var(--bg-color); */
             text-align: center;
             padding-top: 2rem;
             background: var(--color-3);
@@ -94,26 +98,70 @@
             margin: 0 auto; */
         }
         
-        #repositories {
+        section {
             padding-top: 4rem;
+            padding-bottom: 4rem;
         }
-
+        
         .title {
             text-align: center;
             margin-bottom: 4rem;
         }
 
-        .repository {
+        .button {
+            border: 1px solid;
+            padding: 0.2rem 2rem;
+            border-radius: 0.4rem;
+            text-decoration: none;
+        }
+
+        .button--primary {
+            background: var(--color-3);
+            color: var(--white);
+        }
+
+        .button--primary:hover {
+            background: var(--color-2);
+        }
+        
+        .card {
+            display: flex;
             border: 1px solid #ccc;
             padding: 2rem;
             border-radius: 0.4rem;
             box-shadow: 4px 4px 5px #999;
+            background-color: var(--white);
+        }
+
+        .card .card__content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card .card__content .button{
+            align-self: end;
+            margin-top: auto;
+        }
+
+        .card-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .card-grid .card {
             flex: 1 1 40rem;
             min-height: 18rem;
-            /* max-width: 40rem; */
+
+        }
+        
+        .repository {
             display: flex;
             gap: 2rem;
         }
+
         .repository .repository__name {
             font-size: 2.4rem;
         }
@@ -154,40 +202,88 @@
             </div>
         </div>
     </section>
+
     <section id="repositories">   
-        <h2 class="title">Main Projects</h2>
+        <h2 class="title">Main Personal Projects</h2>
         
-        <div class="flex container">
-            <article class="repository">
+        <div class="flex container card-grid">
+            <article class="card repository">
                 <div class="repository__img">
                     <img src="{{ '/resources/svg/github-svgrepo-com.svg' | relative_url }}" alt="">
                 </div>
-                <div class="repository__info">
+                <div class="repository__info card__content">
                     <h3 class="repository__name">Profile</h3>
                     <p class="repository__description">My profile on GitHub</p>
-                    <a href="https://github.com/Minoro/">Visit</a>
+                    <a class="button button--primary" href="https://github.com/Minoro/">Visit</a>
                 </div>
             </article>
     
-            <article class="repository">
+            <article class="card repository">
                 <div class="repository__img">
                     <img src="{{ '/resources/svg/elephant-svgrepo-com.svg' | relative_url }}" alt="">
                 </div>
-                <div class="repository__info">
+                <div class="repository__info card__content">
                     <h3 class="repository__name">PGPYML</h3>
                     <p class="repository__description">Machine Learning on PostgreSQL</p>
-                    <a href="https://minoro.github.io/pgpyml/">Visit</a>
+                    <a class="button button--primary" href="https://minoro.github.io/pgpyml/">Visit</a>
                 </div>
             </article>
             
-            <article class="repository">
+            <article class="card repository">
                 <div class="repository__img">
                     <img src="{{ '/resources/svg/fire-svgrepo-com.svg' | relative_url }}" alt="">
                 </div>
-                <div class="respository__info">
+                <div class="respository__info card__content">
                     <h3 class="repository__name">Active Fire Detection</h3>
                     <p class="repository__description"><abbr title="Active Fire Decetion">AFD</abbr> in Landsat-8 using Deep Learning</p>
-                    <a href="https://github.com/pereira-gha/activefire">Visit</a>
+                    <a class="button button--primary" href="https://github.com/pereira-gha/activefire">Visit</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section id="resoures">
+        <h2 class="title">Useful Resources for Web Developers</h2>
+        <div class="container">
+        </div>
+        <div class="flex container card-grid">
+            <article class="card resource">
+                <div class="card__content">
+                    <h3 class="resource__name">Coolors</h3>
+                    <p class="resource__description">Generate beautiful color pallets</p>
+                    <a class="button button--primary" href="https://coolors.co/" target="_blank">Visit</a>
+                </div>
+            </article>
+
+            <article class="card resource">
+                <div class="card__content">
+                    <h3 class="resource__name">Khroma</h3>
+                    <p class="resource__description">Color pallets generated by AI</p>
+                    <a class="button button--primary" href="http://khroma.co/" target="_blank">Visit</a>
+                </div>
+            </article>
+
+            <article class="card resource">
+                <div class="card__content">
+                    <h3 class="resource__name">Undraw</h3>
+                    <p class="resource__description">Open-source illustrations for your next project</p>
+                    <a class="button button--primary" href="https://undraw.co/" target="_blank">Visit</a>
+                </div>
+            </article>
+
+
+            <article class="card resource">
+                <div class="card__content">
+                    <h3 class="resource__name">SVGRepo</h3>
+                    <p class="resource__description">Free SVG Vectors (like the ones above)</p>
+                    <a class="button button--primary" href="https://www.svgrepo.com/" target="_blank">Visit</a>
+                </div>
+            </article>
+
+            <article class="card resource">
+                <div class="card__content">
+                    <h3 class="resource__name">Daily.dev</h3>
+                    <p class="resource__description">Amazing browser extension to read Developers news</p>
+                    <a class="button button--primary" href="https://daily.dev/" target="_blank">Visit</a>
                 </div>
             </article>
         </div>
