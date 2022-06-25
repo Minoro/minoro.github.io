@@ -13,7 +13,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet"> 
 
     <style>
         :root {
@@ -34,7 +35,7 @@
         }
 
         html {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
         }
 
@@ -87,7 +88,7 @@
         .flex {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: center;
             gap: 2rem;
             /* max-width: 80%;
             margin: 0 auto; */
@@ -108,14 +109,23 @@
             border-radius: 0.4rem;
             box-shadow: 4px 4px 5px #999;
             flex: 1 1 40rem;
-            min-height: 16rem;
+            min-height: 18rem;
             /* max-width: 40rem; */
+            display: flex;
+            gap: 2rem;
         }
         .repository .repository__name {
             font-size: 2.4rem;
         }
         .repository p {
             font-size: 1.8rem;
+        }
+        .repository .repository__img {
+            width: 7rem;
+        }
+
+        .repository .repository__img img {
+            width: 100%;
         }
 
         @media only screen and (min-width: 900px) {
@@ -145,25 +155,40 @@
         </div>
     </section>
     <section id="repositories">   
-        <h2 class="title">Projects</h2>
+        <h2 class="title">Main Projects</h2>
         
         <div class="flex container">
             <article class="repository">
-                <h3 class="repository__name">Profile</h3>
-                <p class="repository__description">My profile on GitHub</p>
-                <a href="https://github.com/Minoro/">Visit</a>
+                <div class="repository__img">
+                    <img src="{{ '/resources/svg/github-svgrepo-com.svg' | relative_url }}" alt="">
+                </div>
+                <div class="repository__info">
+                    <h3 class="repository__name">Profile</h3>
+                    <p class="repository__description">My profile on GitHub</p>
+                    <a href="https://github.com/Minoro/">Visit</a>
+                </div>
             </article>
     
             <article class="repository">
-                <h3 class="repository__name">PGPYML</h3>
-                <p class="repository__description">Machine Learning on PostgreSQL</p>
-                <a href="https://minoro.github.io/pgpyml/">Visit</a>
+                <div class="repository__img">
+                    <img src="{{ '/resources/svg/elephant-svgrepo-com.svg' | relative_url }}" alt="">
+                </div>
+                <div class="repository__info">
+                    <h3 class="repository__name">PGPYML</h3>
+                    <p class="repository__description">Machine Learning on PostgreSQL</p>
+                    <a href="https://minoro.github.io/pgpyml/">Visit</a>
+                </div>
             </article>
             
             <article class="repository">
-                <h3 class="repository__name">Active Fire Detection</h3>
-                <p class="repository__description"><abbr title="Active Fire Decetion">AFD</abbr> in Landsat-8 using Deep Learning</p>
-                <a href="https://github.com/pereira-gha/activefire">Visit</a>
+                <div class="repository__img">
+                    <img src="{{ '/resources/svg/fire-svgrepo-com.svg' | relative_url }}" alt="">
+                </div>
+                <div class="respository__info">
+                    <h3 class="repository__name">Active Fire Detection</h3>
+                    <p class="repository__description"><abbr title="Active Fire Decetion">AFD</abbr> in Landsat-8 using Deep Learning</p>
+                    <a href="https://github.com/pereira-gha/activefire">Visit</a>
+                </div>
             </article>
         </div>
     </section>
