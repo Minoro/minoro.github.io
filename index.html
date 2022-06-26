@@ -112,6 +112,7 @@
         }
 
         .button {
+            display: inline-block;
             border: 1px solid;
             padding: 0.2rem 2rem;
             border-radius: 0.4rem;
@@ -221,19 +222,30 @@
 
         .timeline__content::after {
             content: " ";
-            width: 3.5rem;
+            width: 50%;
             height: 0;
             display: block;
             position: absolute;
             top: 3.7rem;
             border: 3px dashed var(--color-3);
             left: -1rem;
+            z-index: 1;
         }
         
         .timeline__event {
             max-width: 90%;
             margin: 0 auto;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline__event h2 {
+            font-size: 2.2rem;
+        }
+
+        .timeline__event .timeline__description {
+            font-size: 1.8rem;   
         }
         
         .footer {
@@ -305,9 +317,12 @@
                 left: 1.7rem;
             }
 
+            .timeline__content:nth-child(2n+1) .timeline__event.card {
+                box-shadow: -4px 4px 5px #999;
+            }
+
             .timeline__event {
                 margin: inherit;
-                z-index: 2;
             }
         }
 
@@ -392,7 +407,15 @@
                 <div class="timeline__content">
                     <article class="timeline__event card">
                         <h2>2017 - Present</h2>
-                        <p class="timeline__description">IT Analyst at PARANACIDADE. </p>
+                        <p class="timeline__description">
+                            IT Analyst at <a href="https://www.paranacidade.org.br/">PARANACIDADE</a>
+                            <div>Projects: 
+                                <div>
+                                    <a class="button button--primary" href="">Portal dos Municípios</a> 
+                                    <a class="button button--primary" href="">GurIA</a>
+                                </div>
+                            </div>
+                        </p>
                     </article>
                 </div>
     
