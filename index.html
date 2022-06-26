@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="André Minoro Fusioka, software developer, machine learning enthusiast, pursuing a Ph.D. degree at the Federal University of Technology – Paraná (UTFPR)">
+    <meta name="description" content="{{ site.description }}">
     <meta name="keywords" content="Personal homepage, developer, student">
     <meta name="author" content="{{ site.site.author }}">
     <title>{{ site.site.author }}</title>
@@ -20,12 +20,14 @@
         :root {
             --bg-color: #f5f5f5;
             --white: #fff;
+            --black: #000;
             --color-1: #00F5D4;
             --color-2: #009bf5;
             --color-3: #025878;
             --color-4: #F15BB5;
             --color-5: #9B5DE5;
-            --dark: #333333;
+            --dark-1: #333333;
+            --dark-2: #0e1217;
         }
 
         *, *::after, *::before {
@@ -136,6 +138,7 @@
             border-radius: 0.4rem;
             box-shadow: 4px 4px 5px #999;
             background-color: var(--white);
+            color: var(--black);
         }
 
         .card .card__content {
@@ -181,10 +184,62 @@
             width: 100%;
         }
 
+
+        .timeline {
+            position: relative;
+            padding: 2rem 2rem 2rem 4rem;
+            max-width: 100%;
+        }
+
+        .timeline::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            width: 0.5rem;
+            height: 100%;
+            background: var(--color-2);
+        }
+
+        .timeline__content {
+            position: relative;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline__content::before {
+            content: "";
+            width: 1.8rem;
+            height: 1.8rem;
+            background: var(--color-3);
+            position: absolute;
+            border-radius: 50%;
+            left: -3.6rem;
+            top: 3rem;
+        }
+
+        .timeline__content::after {
+            content: " ";
+            width: 3.5rem;
+            height: 0;
+            display: block;
+            position: absolute;
+            top: 3.7rem;
+            border: 3px dashed var(--color-3);
+            left: -1rem;
+        }
+        
+        .timeline__event {
+            max-width: 90%;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
         .footer {
             text-align: center;
             padding: 1.5rem;
-            background: var(--dark);
+            background: var(--dark-1);
             color: var(--white);        
             font-size: 1.6rem;
         }
@@ -204,6 +259,55 @@
                 padding-top: 4rem;
                 padding-bottom: 4rem;
                 
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline::before {
+                left: 50%;
+            }
+
+            .timeline__content {
+                width: 50%;
+                display: flex;
+                z-index: 2;
+            }
+
+            .timeline__content::after { 
+                width: 6.6rem;
+                z-index: 1;
+            }
+
+            .timeline__content:nth-child(2n+1)::before {
+                left: auto;
+                right: -1.1rem;
+            }
+
+            .timeline__content:nth-child(2n+1)::after {
+                right: 1.5rem;
+                left: auto;
+            }
+            
+            /* Move the card to the right */
+            .timeline__content:nth-child(2n) {
+                transform: translateX(100%);
+                display: flex;
+                justify-content: end;
+            }
+            
+            .timeline__content:nth-child(2n)::before {
+                left: -0.6rem;
+            }
+
+            .timeline__content:nth-child(2n)::after {
+                left: 1.7rem;
+            }
+
+            .timeline__event {
+                margin: inherit;
+                z-index: 2;
             }
         }
 
@@ -264,10 +368,62 @@
             </article>
         </div>
     </section>
+
+    <section id="timeline">
+        <h2 class="title">Timeline</h2>
+        
+        <div class="container">
+            <div class="timeline">
+                <div class="timeline__content">
+                    <article class="timeline__event card">
+                        <h2>2022 - Present</h2>
+                        <p class="timeline__description">PhD student at Federal University of Technology - Paraná (UTFPR)</p>
+                    </article>
+                </div>
+    
+                <div class="timeline__content">
+                    <article class="timeline__event card">
+                        <h2>2019 - 2021</h2>
+                        <p class="timeline__description">Master's Degree in Applied Computer Science at Federal University of Technology - Paraná (UTFPR)</p>
+                    </article>
+                </div>
+
+
+                <div class="timeline__content">
+                    <article class="timeline__event card">
+                        <h2>2017 - Present</h2>
+                        <p class="timeline__description">IT Analyst at PARANACIDADE. </p>
+                    </article>
+                </div>
+    
+                <div class="timeline__content">
+                    <article class="timeline__event card">
+                        <h2>2017 - 2018</h2>
+                        <p class="timeline__description">Web Developer at <a href="https://www.mkx.com.br/">MKX E-Commerce</a></p>
+                    </article>
+                </div>
+
+                <div class="timeline__content">
+                    <article class="timeline__event card">
+                        <h2>2016 - 2017</h2>
+                        <p class="timeline__description">Postgraduate (Lato Sensu) in Web Development Technologies at University North of Paraná (Unopar)</p>
+                    </article>
+                </div>
+    
+                <div class="timeline__content">
+                    <article class="timeline__event card">
+                        <h2>2012 - 2016</h2>
+                        <p class="timeline__description">Bachelor's degree in Computer Science Degree at State University of Londrina (UEL)</p>
+                    </article>
+                </div>
+    
+            </div>
+        </div>
+        
+    </section>
+
     <section id="resoures">
         <h2 class="title">Useful Resources for Web Developers</h2>
-        <div class="container">
-        </div>
         <div class="flex container card-grid">
             <article class="card resource">
                 <div class="card__content">

@@ -22,7 +22,7 @@ author: André Minoro Fusioka
 title: André Minoro Fusioka Home Page
 email: no@email.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm André Minoro Fusioka, software developer, machine learning enthusiast, pursuing a Ph.D. degree at the Federal University of Technology – Paraná (UTFPR) 
+  I'm André Minoro Fusioka, software developer, machine learning enthusiast, pursuing a PhD degree at the Federal University of Technology – Paraná (UTFPR)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://minoro.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Minoro
