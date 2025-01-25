@@ -15,324 +15,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet"> 
-
-    <style>
-        :root {
-            --bg-color: #f5f5f5;
-            --white: #fff;
-            --black: #000;
-            --color-1: #00F5D4;
-            --color-2: #009bf5;
-            --color-3: #025878;
-            --color-4: #F15BB5;
-            --color-5: #9B5DE5;
-            --dark-1: #333333;
-            --dark-2: #0e1217;
-        }
-
-        *, *::after, *::before {
-            margin: 0;
-            border: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-family: 'Poppins', sans-serif;
-            font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
-        }
-
-        body 
-        {
-            font-size: 2.1rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-
-        section:nth-child(2n+1)
-        {
-            background-color: var(--bg-color);
-        }
-
-
-        #presentation {
-            text-align: center;
-            padding-top: 2rem;
-            background: var(--color-3);
-            background: linear-gradient(90deg, var(--color-3) 0%, var(--color-2) 100%);
-            color: var(--white);
-        }
-
-        .container {
-            padding: 1rem;
-            max-width: 130rem;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 3rem;
-        }
-
-        .name {
-            font-size: 3.4rem;
-        }
-
-        .profile-image {
-            max-width: 100%;
-            width: 20rem;
-            border-radius: 50%;
-        }
-
-        .me {
-            max-width: 80rem;
-            text-align: left;
-            padding-top: 2rem;
-        }
-
-        .flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            /* max-width: 80%;
-            margin: 0 auto; */
-        }
-        
-        section {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-        
-        .title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .button {
-            display: inline-block;
-            border: 1px solid;
-            padding: 0.2rem 2rem;
-            border-radius: 0.4rem;
-            text-decoration: none;
-        }
-
-        .button--primary {
-            background: var(--color-3);
-            color: var(--white);
-        }
-
-        .button--primary:hover {
-            background: var(--color-2);
-        }
-
-        .heart::before {
-            content: "\1F499";
-        }
-        
-        .card {
-            display: flex;
-            border: 1px solid #ccc;
-            padding: 2rem;
-            border-radius: 0.4rem;
-            box-shadow: 4px 4px 5px #999;
-            background-color: var(--white);
-            color: var(--black);
-        }
-
-        .card .card__content {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .card .card__content .button{
-            align-self: end;
-            margin-top: auto;
-        }
-
-        .card-grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .card-grid .card {
-            flex: 1 1 40rem;
-            min-height: 18rem;
-
-        }
-        
-        .repository {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .repository .repository__name {
-            font-size: 2.4rem;
-        }
-        .repository p {
-            font-size: 1.8rem;
-        }
-        .repository .repository__img {
-            width: 7rem;
-        }
-
-        .repository .repository__img img {
-            width: 100%;
-        }
-
-
-        .timeline {
-            position: relative;
-            padding: 2rem 2rem 2rem 4rem;
-            max-width: 100%;
-        }
-
-        .timeline::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 1rem;
-            width: 0.5rem;
-            height: 100%;
-            background: var(--color-2);
-        }
-
-        .timeline__content {
-            position: relative;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .timeline__content::before {
-            content: "";
-            width: 1.8rem;
-            height: 1.8rem;
-            background: var(--color-3);
-            position: absolute;
-            border-radius: 50%;
-            left: -3.6rem;
-            top: 3rem;
-        }
-
-        .timeline__content::after {
-            content: " ";
-            width: 50%;
-            height: 0;
-            display: block;
-            position: absolute;
-            top: 3.7rem;
-            border: 3px dashed var(--color-3);
-            left: -1rem;
-            z-index: 1;
-        }
-        
-        .timeline__event {
-            max-width: 90%;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 2;
-        }
-
-        .timeline__event h2 {
-            font-size: 2.2rem;
-        }
-
-        .timeline__event .timeline__description {
-            display: block;
-            font-size: 1.8rem;
-            width: 100%;   
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--dark-1);
-            color: var(--white);        
-            font-size: 1.6rem;
-        }
-
-        .footer p {
-            margin-bottom: 0;
-        }
-
-        .footer a, .footer a:visited  {
-            color: var(--white);
-            text-decoration: none;
-        }
-
-
-        @media only screen and (min-width: 900px) {
-            #presentation {
-                padding-top: 4rem;
-                padding-bottom: 4rem;
-                
-            }
-
-            .timeline {
-                padding-left: 2rem;
-            }
-
-            .timeline::before {
-                left: 50%;
-            }
-
-            .timeline__content {
-                width: 50%;
-                display: flex;
-                z-index: 2;
-            }
-
-            .timeline__content::after { 
-                width: 6.6rem;
-                z-index: 1;
-            }
-
-            .timeline__content:nth-child(2n+1)::before {
-                left: auto;
-                right: -1.1rem;
-            }
-
-            .timeline__content:nth-child(2n+1)::after {
-                right: 1.5rem;
-                left: auto;
-            }
-            
-            /* Move the card to the right */
-            .timeline__content:nth-child(2n) {
-                transform: translateX(100%);
-                display: flex;
-                justify-content: end;
-            }
-            
-            .timeline__content:nth-child(2n)::before {
-                left: -0.6rem;
-            }
-
-            .timeline__content:nth-child(2n)::after {
-                left: 1.7rem;
-            }
-
-            .timeline__content:nth-child(2n+1) .timeline__event.card {
-                box-shadow: -4px 4px 5px #999;
-            }
-
-            .timeline__event {
-                margin: inherit;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <main>
+
+    <nav class="navigation">
+        <ul class="container navigation__items" role="navigation">	
+            <li class="navigation__item hover-underline"><a href="#presentation">About Me</a></li>
+            <li class="navigation__item hover-underline"><a href="#repositories">Personal Projects</a></li>
+            <li class="navigation__item hover-underline"><a href="#publications">Publications</a></li>
+            <li class="navigation__item hover-underline"><a href="#timeline">Timeline</a></li>
+        </ul>
+    </nav>
 
     <section id="presentation">
         <div class="container">
@@ -348,12 +44,12 @@
     </section>
 
     <section id="repositories">   
-        <h2 class="title">Main Personal Projects</h2>
+        <h2 class="title">Personal Projects</h2>
         
         <div class="flex container card-grid">
             <article class="card repository">
                 <div class="repository__img">
-                    <img src="{{ '/resources/svg/github-svgrepo-com.svg' | relative_url }}" alt="">
+                    <img src="{{ '/resources/svg/github-svgrepo-com.svg' | relative_url }}" alt="Vector logo of GitHub">
                 </div>
                 <div class="repository__info card__content">
                     <h3 class="repository__name">Profile</h3>
@@ -364,7 +60,7 @@
     
             <article class="card repository">
                 <div class="repository__img">
-                    <img src="{{ '/resources/svg/elephant-svgrepo-com.svg' | relative_url }}" alt="">
+                    <img src="{{ '/resources/svg/elephant-svgrepo-com.svg' | relative_url }}" alt="Vector image representing an elephant">
                 </div>
                 <div class="repository__info card__content">
                     <h3 class="repository__name">PGPYML</h3>
@@ -375,12 +71,75 @@
             
             <article class="card repository">
                 <div class="repository__img">
-                    <img src="{{ '/resources/svg/fire-svgrepo-com.svg' | relative_url }}" alt="">
+                    <img src="{{ '/resources/svg/fire-svgrepo-com.svg' | relative_url }}" alt="Vector image representing a flame">
                 </div>
                 <div class="respository__info card__content">
                     <h3 class="repository__name">Active Fire Detection</h3>
                     <p class="repository__description"><abbr title="Active Fire Decetion">AFD</abbr> in Landsat-8 using Deep Learning</p>
                     <a class="button button--primary" href="https://github.com/pereira-gha/activefire">Visit</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2 class="title">Publications</h2>
+        <div class="container">
+            <article class="publication">
+                <div class="publication__image">
+                    <img class="img-responsive" src="{{ '/resources/jstar_abstract.jpg' | relative_url }}" alt="Graphical  abstract of the proposed method of transfer-learning for active fire segmentation using Landsat-8 and Sentinel-2 satellites, using a single image for fine-tuning the model.">
+                </div>
+                <div class="publication__content">
+                    <h2 class="publication__title"><a href="https://ieeexplore.ieee.org/document/10620606" target="_blank" rel="noopener">Active Fire Segmentation: A Transfer Learning Study From Landsat-8 to Sentinel-2</a></h2>
+                    <p class="publication__publisher">Published in: IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</p>
+                    <p class="publication__doi">DOI: <a href="https://doi.org/10.1109/JSTARS.2024.3436811" target="_blank" rel="noopener">10.1109/JSTARS.2024.3436811</a></p>
+                    <div class="publication__badges">
+                        <span class="publication__badge publication__badge--open-source"><a href="https://github.com/Minoro/transfer-learning-landsat8-sentinel2" target="_blank" rel="noopener">Open Source</a></span>
+                        <span class="publication__badge publication__badge--open-access"><a href="https://ieeexplore.ieee.org/document/10620606" target="_blank" rel="noopener">Open Access</a></span>
+                    </div>
+
+                    <details>
+                        <summary class="publication__summary">Abstract <span>(Click to toggle)</span></summary>
+                        <p class="publication__abstract">Active fire segmentation through satellite imagery is fundamental to prevention and damage prediction. Algorithms to address this problem usually rely on sensor-specific thresholds, empirically chosen based on a few image samples, and thus, are susceptible to many errors. Deep learning algorithms automatically extract information through various levels of abstraction, avoiding human intervention for feature engineering. However, training a deep network from scratch requires massive labeled data, and efforts in this direction have already been made for the Landsat-8 satellite. For Sentinel-2, another important satellite that has band wavelength similarities with Landsat-8, there is a limited number of such initiatives, with few studies even concerning hand-crafted (traditional) algorithms. In this context, we explored in this article the transfer of knowledge for active fire segmentation from Landsat-8 to Sentinel-2, avoiding the need of a vast amount of labeled data from Sentinel-2, and also reducing the computational resources for training. We also compiled a benchmark containing 12 584 image patches extracted from 26 Sentinel-2 images from around the globe, along with manually annotated fire pixels, to assess the algorithm's response compared to a human specialist. In a series of transfer learning experiments by using the U-Net architecture, we showed that even a single labeled image from Sentinel-2 for training was sufficient to allow achieving an F -score metric of 84.9% when Landsat-8 knowledge is transferred and further fine-tuned in the machine learning process, while the best hand-crafted algorithm designed for Sentinel-2 achieved an F -score of 75.8% in the segmentation task.</p>
+                    </details> 
+                </div>
+            </article>
+
+            <article class="publication">
+                <div class="publication__image">
+                    <img class="img-responsive" src="{{ '/resources/grsl_abstract.jpg' | relative_url }}" alt="Graphical abstract of the experiments using transfer-learning using differents architectures.">
+                </div>
+                <div class="publication__content">
+                    <h2 class="publication__title"><a href="https://ieeexplore.ieee.org/document/10636193" target="_blank" rel="noopener">Sentinel-2 Active Fire Segmentation: Analyzing Convolutional and Transformer Architectures, Knowledge Transfer, Fine-Tuning, and Seam Lines</h2>
+                    <p class="publication__publisher">Published in: IEEE Geoscience and Remote Sensing Letters</p>
+                    <p class="publication__doi">DOI: <a href="https://doi.org/10.1109/LGRS.2024.3443775" target="_blank" rel="noopener">10.1109/LGRS.2024.3443775</a></p>
+                    <div class="publication__badges">
+                        <span class="publication__badge publication__badge--open-source"><a href="https://github.com/Minoro/l8tos2-transf-seamlines" target="_blank" rel="noopener">Open Source</a></span>
+                    </div>
+
+                    <details open>
+                        <summary class="publication__summary">Abstract <span>(Click to toggle)</span></summary>
+                        <p class="publication__abstract">Active fire segmentation in satellite imagery is a critical remote sensing task, providing essential support for planning, decision-making, and policy development. Several techniques have been proposed for this problem over the years, generally based on specific equations and thresholds, which are sometimes empirically chosen. Some satellites, such as MODIS and Landsat-8, have consolidated algorithms for this task. However, for other important satellites such as Sentinel-2, this is still an open problem. In this letter, we explore the possibility of using transfer learning to train convolutional and transformer-based deep architectures (U-Net, DeepLabV3+, and SegFormer) for active fire segmentation. We pretrain these architectures based on Landsat-8 images and automatically labeled samples and fine-tune them to Sentinel-2 images. The experiments show that the proposed method achieves F1 -scores of up to 88.4% for Sentinel-2 images, outperforming three threshold-based algorithms by at least 19% while maintaining a low demand for manually labeled samples. We also address detection over seam-line regions that present a particular challenge for existing methods. The source code and trained models are available at <a href="https://github.com/Minoro/l8tos2-transf-seamlines" target="_blank" rel="noopener">https://github.com/Minoro/l8tos2-transf-seamlines</a>.</p>
+                    </details> 
+                </div>
+            </article>
+
+            <article class="publication">
+                <div class="publication__image">
+                    <img class="img-responsive" src="{{ '/resources/active_fire_landsat_abstract.jpg' | relative_url }}" alt="Graphical abstract of the proposed method, training a deep neural network using manually annotated images from Landsat-8.">
+                </div>
+                <div class="publication__content">
+                    <h2 class="publication__title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S092427162100160X" target="_blank" rel="noopener">Active fire detection in Landsat-8 imagery: A large-scale dataset and a deep-learning study</h2>
+                    <p class="publication__publisher">Published in: ISPRS Journal of Photogrammetry and Remote Sensin</p>
+                    <p class="publication__doi">DOI: <a href="https://doi.org/10.1016/j.isprsjprs.2021.06.002" target="_blank" rel="noopener">10.1016/j.isprsjprs.2021.06.002</a></p>
+                    <div class="publication__badges">
+                        <span class="publication__badge publication__badge--open-source"><a href="https://github.com/Minoro/l8tos2-transf-seamlines" target="_blank" rel="noopener">Open Source</a></span>
+                    </div>
+
+                    <details open>
+                        <summary class="publication__summary">Abstract <span>(Click to toggle)</span></summary>
+                        <p class="publication__abstract">Active fire segmentation in satellite imagery is a critical remote sensing task, providing essential support for planning, decision-making, and policy development. Several techniques have been proposed for this problem over the years, generally based on specific equations and thresholds, which are sometimes empirically chosen. Some satellites, such as MODIS and Landsat-8, have consolidated algorithms for this task. However, for other important satellites such as Sentinel-2, this is still an open problem. In this letter, we explore the possibility of using transfer learning to train convolutional and transformer-based deep architectures (U-Net, DeepLabV3+, and SegFormer) for active fire segmentation. We pretrain these architectures based on Landsat-8 images and automatically labeled samples and fine-tune them to Sentinel-2 images. The experiments show that the proposed method achieves F1 -scores of up to 88.4% for Sentinel-2 images, outperforming three threshold-based algorithms by at least 19% while maintaining a low demand for manually labeled samples. We also address detection over seam-line regions that present a particular challenge for existing methods. The source code and trained models are available at <a href="https://github.com/Minoro/l8tos2-transf-seamlines" target="_blank" rel="noopener">https://github.com/Minoro/l8tos2-transf-seamlines</a>.</p>
+                    </details> 
                 </div>
             </article>
         </div>
@@ -395,7 +154,7 @@
                     <article class="timeline__event card">
                         <h2>2024 - Present</h2>
                         <p class="timeline__description">
-                            IT Analyst at <a href="https://www.serpro.gov.br/">SERPRO</a>
+                            Information Technology Analyst at <a target="_blank" rel="noopener" href="https://www.serpro.gov.br/">SERPRO</a>
                         </p>
                     </article>
                 </div>
@@ -406,7 +165,17 @@
                         <p class="timeline__description">PhD student at Federal University of Technology - Paraná (UTFPR)</p>
                     </article>
                 </div>
-    
+
+                <div class="timeline__content">
+                    <article class="timeline__event card">
+                        <h2>2023</h2>
+                        <p class="timeline__description">1st place in Kaggle competition - CrowdSec</p>
+                        <div>
+                            <a class="button button--primary" target="_blank" rel="noopener" href="https://www.kaggle.com/competitions/vpn-classification/code">Leaderboard</a>
+                        </div>
+                    </article>
+                </div>
+
                 <div class="timeline__content">
                     <article class="timeline__event card">
                         <h2>2019 - 2021</h2>
@@ -419,12 +188,12 @@
                     <article class="timeline__event card">
                         <h2>2017 - 2024</h2>
                         <p class="timeline__description">
-                            IT Analyst at <a href="https://www.paranacidade.org.br/">PARANACIDADE</a>
+                            IT Analyst at PARANACIDADE
                         </p>
                         <div class="timeline__description">Main Projects: 
                             <div>
-                                <a class="button button--primary" href="https://portaldosmunicipios.pr.gov.br/">Portal dos Municípios</a> 
-                                <a class="button button--primary" href="https://sistemas.paranacidade.org.br/guria/">GurIA</a>
+                                <a class="button button--primary" target="_blank" rel="noopener" href="https://portaldosmunicipios.pr.gov.br/">Portal dos Municípios</a> 
+                                <a class="button button--primary" target="_blank" rel="noopener" href="https://sistemas.paranacidade.org.br/guria/">GurIA</a>
                             </div>
                         </div>
                     </article>
@@ -440,14 +209,14 @@
                 <div class="timeline__content">
                     <article class="timeline__event card">
                         <h2>2016 - 2017</h2>
-                        <p class="timeline__description">Web Developer at <a href="https://www.mkx.com.br/">MKX E-Commerce</a></p>
+                        <p class="timeline__description">Web Developer at <a target="_blank" rel="noopener" href="https://www.mkx.com.br/">MKX E-Commerce</a></p>
                     </article>
                 </div>
 
                 <div class="timeline__content">
                     <article class="timeline__event card">
                         <h2>2012 - 2016</h2>
-                        <p class="timeline__description">Bachelor's degree in Computer Science Degree at State University of Londrina (UEL)</p>
+                        <p class="timeline__description">Bachelor's degree in Computer Science at State University of Londrina (UEL)</p>
                     </article>
                 </div>
     
